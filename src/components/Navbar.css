@@ -1,0 +1,56 @@
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all 0.4s;
+}
+.navbar.scrolled {
+  background: rgba(253,248,240,0.97);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 2px 24px rgba(26,18,10,0.08);
+  padding: 0.8rem 3rem;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem; font-weight: 700;
+  color: var(--ink); letter-spacing: 1px;
+}
+.navbar:not(.scrolled) .nav-logo { color: #fff; }
+.nav-logo em { font-style: italic; color: var(--gold); font-weight: 400; font-size: 1rem; letter-spacing: 2px; margin-left: 0.3rem; }
+
+.nav-links { display: flex; gap: 1.75rem; }
+.nav-links button {
+  background: none; border: none;
+  font-size: 0.82rem; letter-spacing: 1px; font-weight: 500;
+  color: var(--ink); opacity: 0.75; transition: all 0.2s;
+}
+.navbar:not(.scrolled) .nav-links button { color: rgba(255,255,255,0.8); }
+.nav-links button:hover { opacity: 1; color: var(--gold); }
+
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.nav-phone { font-size: 0.78rem; color: var(--muted); }
+.navbar:not(.scrolled) .nav-phone { color: rgba(255,255,255,0.6); }
+.nav-phone strong { color: var(--warm); }
+.navbar:not(.scrolled) .nav-phone strong { color: var(--amber); }
+
+.nav-cart-btn {
+  background: var(--gold); color: #fff; border: none;
+  padding: 0.55rem 1.2rem; border-radius: 30px;
+  font-size: 0.78rem; font-weight: 600;
+  display: flex; align-items: center; gap: 0.5rem;
+  transition: all 0.25s;
+  box-shadow: 0 4px 12px rgba(200,137,42,0.3);
+}
+.nav-cart-btn:hover { background: var(--warm); transform: translateY(-1px); }
+.cart-badge {
+  background: #fff; color: var(--gold);
+  border-radius: 50%; width: 18px; height: 18px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 0.9rem 1.25rem; }
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+}
